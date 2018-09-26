@@ -1,0 +1,79 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.1  0.2  33620  2932 ?        Ss   21:05   0:02 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    21:05   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    21:05   0:00 [ksoftirqd/0]
+root         4  0.0  0.0      0     0 ?        S    21:05   0:00 [kworker/0:0]
+root         5  0.0  0.0      0     0 ?        S<   21:05   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    21:05   0:02 [rcu_sched]
+root         8  0.1  0.0      0     0 ?        R    21:05   0:02 [rcuos/0]
+root         9  0.0  0.0      0     0 ?        S    21:05   0:00 [rcu_bh]
+root        10  0.0  0.0      0     0 ?        S    21:05   0:00 [rcuob/0]
+root        11  0.0  0.0      0     0 ?        S    21:05   0:00 [migration/0]
+root        12  0.0  0.0      0     0 ?        S    21:05   0:00 [watchdog/0]
+root        13  0.0  0.0      0     0 ?        S<   21:05   0:00 [khelper]
+root        14  0.0  0.0      0     0 ?        S    21:05   0:00 [kdevtmpfs]
+root        15  0.0  0.0      0     0 ?        S<   21:05   0:00 [netns]
+root        16  0.0  0.0      0     0 ?        S<   21:05   0:00 [writeback]
+root        17  0.0  0.0      0     0 ?        S<   21:05   0:00 [kintegrityd]
+root        18  0.0  0.0      0     0 ?        S<   21:05   0:00 [bioset]
+root        19  0.0  0.0      0     0 ?        S<   21:05   0:00 [kworker/u3:0]
+root        20  0.0  0.0      0     0 ?        S<   21:05   0:00 [kblockd]
+root        21  0.0  0.0      0     0 ?        S<   21:05   0:00 [ata_sff]
+root        22  0.0  0.0      0     0 ?        S    21:05   0:00 [khubd]
+root        23  0.0  0.0      0     0 ?        S<   21:05   0:00 [md]
+root        24  0.0  0.0      0     0 ?        S<   21:05   0:00 [devfreq_wq]
+root        25  0.0  0.0      0     0 ?        R    21:05   0:01 [kworker/0:1]
+root        27  0.0  0.0      0     0 ?        S    21:05   0:00 [khungtaskd]
+root        28  0.0  0.0      0     0 ?        S    21:05   0:00 [kswapd0]
+root        29  0.0  0.0      0     0 ?        S<   21:05   0:00 [vmstat]
+root        30  0.0  0.0      0     0 ?        SN   21:05   0:00 [ksmd]
+root        31  0.0  0.0      0     0 ?        SN   21:05   0:00 [khugepaged]
+root        32  0.0  0.0      0     0 ?        S    21:05   0:00 [fsnotify_mark]
+root        33  0.0  0.0      0     0 ?        S    21:05   0:00 [ecryptfs-kthrea]
+root        34  0.0  0.0      0     0 ?        S<   21:05   0:00 [crypto]
+root        46  0.0  0.0      0     0 ?        S<   21:05   0:00 [kthrotld]
+root        47  0.0  0.0      0     0 ?        S    21:05   0:00 [kworker/u2:1]
+root        66  0.0  0.0      0     0 ?        S<   21:05   0:00 [deferwq]
+root        67  0.0  0.0      0     0 ?        S<   21:05   0:00 [charger_manager]
+root       109  0.0  0.0      0     0 ?        S<   21:05   0:00 [kpsmoused]
+root       110  0.0  0.0      0     0 ?        S    21:05   0:00 [scsi_eh_0]
+root       111  0.0  0.0      0     0 ?        S    21:05   0:00 [kworker/u2:2]
+root       175  0.0  0.0      0     0 ?        S    21:05   0:00 [jbd2/sda1-8]
+root       176  0.0  0.0      0     0 ?        S<   21:05   0:00 [ext4-rsv-conver]
+root       336  0.0  0.0      0     0 ?        S<   21:05   0:00 [kworker/u3:2]
+root       376  0.0  0.0  19476   648 ?        S    21:05   0:00 upstart-udev-bridge --daemon
+root       382  0.0  0.1  49880  1672 ?        Ss   21:05   0:00 /lib/systemd/systemd-udevd --daemon
+root       413  0.0  0.0      0     0 ?        S<   21:05   0:00 [iprt]
+root       503  0.0  0.1  23424  1080 ?        Ss   21:05   0:00 rpcbind
+root       520  0.0  0.0  15260   628 ?        S    21:05   0:00 upstart-socket-bridge --daemon
+statd      526  0.0  0.1  21544  1388 ?        Ss   21:05   0:00 rpc.statd -L
+root       580  0.0  0.2  10220  2588 ?        Ss   21:05   0:00 dhclient -1 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases eth0
+root       832  0.0  0.0      0     0 ?        S    21:05   0:00 [kauditd]
+root       925  0.0  0.0      0     0 ?        S<   21:06   0:00 [rpciod]
+root       946  0.0  0.0  15276   620 ?        S    21:06   0:00 upstart-file-bridge --daemon
+root       954  0.0  0.0      0     0 ?        S<   21:06   0:00 [nfsiod]
+syslog    1003  0.0  0.1 257904  1368 ?        Ssl  21:06   0:00 rsyslogd
+root      1008  0.0  0.0  25544   432 ?        Ss   21:06   0:00 rpc.idmapd
+message+  1023  0.0  0.1  39244  1232 ?        Ss   21:06   0:01 dbus-daemon --system --fork
+root      1037  0.0  0.1  43452  1832 ?        Ss   21:06   0:00 /lib/systemd/systemd-logind
+root      1078  0.0  0.0  14536   960 tty4     Ss+  21:06   0:00 /sbin/getty -8 38400 tty4
+root      1081  0.0  0.0  14536   952 tty5     Ss+  21:06   0:00 /sbin/getty -8 38400 tty5
+root      1085  0.0  0.0  14536   956 tty2     Ss+  21:06   0:00 /sbin/getty -8 38400 tty2
+root      1086  0.0  0.0  14536   960 tty3     Ss+  21:06   0:00 /sbin/getty -8 38400 tty3
+root      1088  0.0  0.0  14536   956 tty6     Ss+  21:06   0:00 /sbin/getty -8 38400 tty6
+root      1126  0.0  0.0   4368   652 ?        Ss   21:06   0:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+root      1136  0.0  0.0  23652   892 ?        Ss   21:06   0:00 cron
+daemon    1137  0.0  0.0  19140   160 ?        Ss   21:06   0:00 atd
+root      1231  0.0  0.1 232768  1080 ?        Sl   21:06   0:00 /usr/sbin/VBoxService
+root      1464  0.0  3.3 182360 34376 ?        Ssl  21:06   0:02 /usr/bin/ruby /usr/bin/puppet agent
+root      1625  0.0  3.4 112828 34684 ?        Sl   21:06   0:00 ruby /usr/bin/chef-client -d -P /var/run/chef/client.pid -c /etc/chef/client.rb -i 1800 -s 20 -L /var/log/chef/client.log
+root      1652  0.0  0.0  14536   948 tty1     Ss+  21:06   0:00 /sbin/getty -8 38400 tty1
+root      1708  0.0  0.2  10224  2904 ?        Ss   21:06   0:00 /sbin/dhclient -nw
+root      1887  0.0  0.3  61376  3076 ?        Ss   21:06   0:00 /usr/sbin/sshd -D
+root      2865  0.0  0.4 105148  4248 ?        Ss   21:10   0:00 sshd: vagrant [priv]
+vagrant   2935  0.0  0.2 105476  2296 ?        S    21:10   0:01 sshd: vagrant@pts/0 
+vagrant   2936  0.0  0.3  21460  4060 pts/0    Ss   21:10   0:01 -bash
+jboss    21780  0.0  0.0   4444   724 ?        S    21:43   0:00 /bin/sh /opt/jboss/bin/standalone.sh -DSP_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss/sp -DEIDAS_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss -DSPECIFIC_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss/specific -DIDP_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss/idp
+jboss    21827 53.4 28.0 1374988 285556 ?      Sl   21:43   0:33 /usr/lib/jre/bin/java -D[Standalone] -server -XX:+UseCompressedOops -XX:+TieredCompilation -Xms64m -Xmx512m -Djava.net.preferIPv4Stack=true -Dorg.jboss.resolver.warning=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Djboss.server.default.config=standalone.xml -Dorg.apache.tomcat.util.http.ServerCookie.ALLOW_HTTP_SEPARATORS_IN_V0=true -DLOG_HOME=/vagrant/logs -Dorg.jboss.boot.log.file=/vagrant/logs/jboss/boot.log -Dorg.jboss.boot.log.file=/opt/jboss/standalone/log/boot.log -Dlogging.configuration=file:/opt/jboss/standalone/configuration/logging.properties -jar /opt/jboss/jboss-modules.jar -mp /opt/jboss/modules -jaxpmodule javax.xml.jaxp-provider org.jboss.as.standalone -Djboss.home.dir=/opt/jboss -DSP_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss/sp -DEIDAS_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss -DSPECIFIC_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss/specific -DIDP_CONFIG_REPOSITORY=/opt/jboss/standalone/configuration/eidas-config/jboss/idp
+vagrant  21923  0.0  0.1  17168  1304 pts/0    R+   21:44   0:00 ps aux
+vagrant  21924  0.0  0.2  21460  2356 pts/0    D+   21:44   0:00 -bash

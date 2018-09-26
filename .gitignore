@@ -1,0 +1,7 @@
+.idea
+*.pem
+.vagrant
+*.log
+docker/logs/
+*.retry
+*.iml

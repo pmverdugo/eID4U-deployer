@@ -1,0 +1,61 @@
+---
+- name: "crea grupo"
+  group: name=jboss
+
+- name: "crea usuario"
+  user: name=jboss group=jboss
+
+- name: "crea home"
+  file:
+    path: "{{ jboss_install_dir }}"
+    owner: jboss
+    group: jboss
+    state: directory
+    mode: 0755
+
+- name: "descomprime binario"
+  become: Yes
+  unarchive:
+    src: "{{ jboss_orig_dir }}"
+    dest: "{{ jboss_install_dir }}"
+    creates: "{{ jboss_install_dir }}/bin"
+    owner: jboss
+    group: jboss
+    extra_opts:
+      - "--no-same-owner"
+      - "--no-same-permissions"
+      - "--strip-components=1"
+
+- name: "parchea modules"
+  copy: src="files/jboss-modules-1.1.5.GA.jar" dest="{{ jboss_install_dir }}/jboss-modules.jar" owner=jboss group=jboss
+
+- name: "copiar modules"
+  copy: src="files/jboss7/" dest="{{ jboss_install_dir }}/modules" owner=jboss group=jboss
+
+- name: "copia propiedades"
+  template:
+    src: jboss.j2.properties
+    dest: "{{ jboss_install_dir }}/jboss.properties"
+    owner: jboss
+    group: jboss
+    mode: 0644
+
+- name: "configura modo standalone"
+  template:
+    src: standalone.j2.sh
+    dest: "{{ jboss_install_dir }}/bin/standalone.conf"
+    owner: jboss
+    group: jboss
+    mode: 0644
+
+- name: "crear servicio"
+  template:
+    src: "{{ jboss_service }}.j2.sh"
+    dest: "/etc/init.d/{{ jboss_service }}"
+    mode: 0755
+
+- name: "configurar servicio"
+  service:
+    name: "{{ jboss_service }}"
+    state: stopped
+    enabled: yes

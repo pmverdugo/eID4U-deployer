@@ -1,0 +1,33 @@
+---
+- hosts: eID4U-idp-demo
+  become: yes
+  vars_files:
+  - misvariables.yml
+  roles:
+  - ansiblebit.oracle-java
+  - jairojunior.jboss
+  - eidas-idm
+---
+- hosts: eID4U-sp-demo
+  become: yes
+  vars_files:
+  - misvariables.yml
+  roles:
+  - ansiblebit.oracle-java
+  - jairojunior.jboss
+  - eidas-sp
+---
+- hosts: eID4U-proxyserver
+  become: yes
+  vars_files:
+  - misvariables.yml
+  roles:
+  - ansiblebit.oracle-java
+  - jairojunior.jboss
+  - tecris.maven
+    when: de_fuentes
+  - eidas-node
+---
+
+
+

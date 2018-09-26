@@ -1,0 +1,45 @@
+---
+- name: "comprobar si existe jre"
+  stat: "path={{ oracle_java_home }}/bin"
+  register: jre_oracle_bin
+
+- name: "crear directorio jre"
+  become: Yes
+  file: path="{{ oracle_java_home }}" state=directory
+
+- name: "descomprime binario"
+  become: Yes
+  unarchive: >
+    src="{{ jre_oracle_orig_dir }}"
+    dest="{{ oracle_java_home }}"
+    creates="{{ oracle_java_home }}/bin"
+    extra_opts="--strip-components=1"
+  when: not jre_oracle_bin.stat.exists
+
+- name: "copiar policies"
+  become: yes
+  copy: src="files/jce-policy8" dest="{{ oracle_java_home }}/lib/security"
+
+- name: "asegurar path por defecto"
+  become: Yes
+  alternatives:
+    link: "/usr/bin/java"
+    name: java
+    path: "{{ oracle_java_home }}/bin/java"
+
+- name: "jce estatico"
+  lineinfile:
+    path: "{{ oracle_java_home }}/lib/security/java.security"
+    line: "security.provider.99=org.bouncycastle.jce.provider.BouncyCastleProvider"
+    regexp: "^security.provider.99="
+    state: present
+
+- name: "jce estatico | copia bce"
+  copy: src="files/jboss7/org/bouncycastle/main/bcprov-jdk15on-1.52.jar" dest="{{ oracle_java_home }}/lib/ext"
+
+- name: "jce estatico | agregar classpath"
+  lineinfile:
+    path: "/etc/environment"
+    line: "CLASSPATH={{ oracle_java_home }}/lib:{{ oracle_java_home }}/lib/ext"
+    regexp: "^CLASSPATH="
+    state: present

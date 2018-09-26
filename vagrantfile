@@ -1,0 +1,55 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = '2'
+
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # máquina de despliegue
+  config.vm.define 'eID4U-deploy', primary: true do |eID4U_deploy|
+    eID4U_deploy.vm.host_name = 'eID4U-deploy'
+    eID4U_deploy.vm.network 'private_network', ip: '192.168.100.2'
+    eID4U_deploy.vm.box = 'ubuntu/trusty64'
+    eID4U_deploy.vm.provider 'virtualbox' do |vb|
+      vb.memory = 256
+    end
+    eID4U_deploy.vm.provision 'shell', :privileged => true, path: "./instala_ansible.sh"
+    eID4U_deploy.trigger.after :up do |trigger|
+      trigger.info = "Desplegando eidas..."
+      trigger.run_remote = {inline: "cd /vagrant;./despliega.sh"}
+    end
+  end
+
+  # nodo aio
+  config.vm.define 'eID4U-node' do |eID4U_node|
+    eID4U_node.vm.host_name = 'eID4U-node'
+    eID4U_node.vm.network 'private_network', ip: '192.168.100.3'
+    eID4U_node.vm.box = 'ubuntu/trusty64'
+    eID4U_node.vm.provider 'virtualbox' do |vb|
+      vb.memory = 1024
+    end
+  end
+
+  # config.vm.define 'eID4U-idp-demo' do |eID4U_idp_demo|
+  #   eID4U_idp_demo.vm.host_name = 'eID4U-idp-demo'
+  #   eID4U_idp_demo.vm.network 'private_network', ip: '192.168.100.4'
+  #   eID4U_idp_demo.vm.box = 'ubuntu/trusty64'
+  #   eID4U_idp_demo.vm.provider 'virtualbox' do |vb|
+  #     vb.memory = 1024
+  #     vb.customize ['modifyvm', :id, '--cpuexecutioncap', '50']
+  #   end
+  # end
+
+  # config.vm.define 'eID4U-sp-demo' do |eID4U_sp_demo|
+  #   eID4U_sp_demo.vm.host_name = 'eID4U-sp-demo'
+  #   eID4U_sp_demo.vm.network 'private_network', ip: '192.168.100.5'
+  #   eID4U_sp_demo.vm.box = 'ubuntu/trusty64'
+  # end
+  #
+  # config.vm.define 'eID4U-connector-demo' do |eID4U_connector_demo|
+  #   eID4U_connector_demo.vm.host_name = 'eID4U-connector-demo'
+  #   eID4U_connector_demo.vm.network 'private_network', ip: '192.168.100.6'
+  #   eID4U_connector_demo.vm.box = 'ubuntu/trusty64'
+  # end
+
+end

@@ -1,0 +1,8 @@
+- name: copia keys al appserver
+  copy: src="files/{{eidas_version}}/eID4U-sp-demo/keys/" dest="{{ config_ruta }}/keystore" owner=jboss group=jboss
+
+- name: copia config al appserver
+  copy: src="files/{{eidas_version}}/eID4U-sp-demo/config/" dest="{{ config_ruta }}/jboss/sp" owner=jboss group=jboss
+
+- name: copia war al appserver
+  copy: src="files/{{eidas_version}}/eID4U-sp-demo/SP.war" dest="{{ wars_ruta }}" owner=jboss group=jboss

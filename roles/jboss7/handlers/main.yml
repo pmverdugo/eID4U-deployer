@@ -1,0 +1,8 @@
+---
+- name: stop jboss
+  service: name={{ jboss_service }} state=stopped
+  listen: "restart jboss"
+
+- name: stat jboss
+  service: name={{ jboss_service }} state=started
+  listen: "restart jboss"

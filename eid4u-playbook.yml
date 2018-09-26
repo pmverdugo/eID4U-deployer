@@ -1,0 +1,20 @@
+---
+- hosts: eID4U-proxyserver
+  become: yes
+  vars_files:
+    - misvariables.yml
+  roles:
+    - java-jre
+    - jboss7
+    - eidas-idp
+    - eidas-sp
+    - eidas-node
+  post_tasks:
+    - name: rearranca el appserver
+      shell: "/etc/init.d/jbossas7 start"
+      environment:
+        AS7_OPTS: "--properties={{jboss_install_dir}}/jboss.properties"
+
+
+
+
