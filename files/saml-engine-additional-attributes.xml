@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Dynamic attributes</comment>
+
+    <entry key="1.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="1.FriendlyName">HomeInstitutionName</entry>
+    <entry key="1.PersonType">NaturalPerson</entry>
+    <entry key="1.Required">false</entry>
+    <entry key="1.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="1.XmlType.LocalPart">string</entry>
+    <entry key="1.XmlType.NamespacePrefix">xs</entry>
+    <entry key="1.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="2.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="2.FriendlyName">HomeInstitutionIdentifier</entry>
+    <entry key="2.PersonType">NaturalPerson</entry>
+    <entry key="2.Required">false</entry>
+    <entry key="2.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="2.XmlType.LocalPart">string</entry>
+    <entry key="2.XmlType.NamespacePrefix">xs</entry>
+    <entry key="2.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="3.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="3.FriendlyName">CurrentDegree</entry>
+    <entry key="3.PersonType">NaturalPerson</entry>
+    <entry key="3.Required">false</entry>
+    <entry key="3.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="3.XmlType.LocalPart">string</entry>
+    <entry key="3.XmlType.NamespacePrefix">xs</entry>
+    <entry key="3.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="4.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="4.FriendlyName">FieldOfStudy</entry>
+    <entry key="4.PersonType">NaturalPerson</entry>
+    <entry key="4.Required">false</entry>
+    <entry key="4.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="4.XmlType.LocalPart">string</entry>
+    <entry key="4.XmlType.NamespacePrefix">xs</entry>
+    <entry key="4.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="5.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="5.FriendlyName">LevelOfStudy</entry>
+    <entry key="5.PersonType">NaturalPerson</entry>
+    <entry key="5.Required">false</entry>
+    <entry key="5.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="5.XmlType.LocalPart">string</entry>
+    <entry key="5.XmlType.NamespacePrefix">xs</entry>
+    <entry key="5.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="6.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="6.FriendlyName">Transcript</entry>
+    <entry key="6.PersonType">NaturalPerson</entry>
+    <entry key="6.Required">false</entry>
+    <entry key="6.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="6.XmlType.LocalPart">string</entry>
+    <entry key="6.XmlType.NamespacePrefix">xs</entry>
+    <entry key="6.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="7.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="7.FriendlyName">DegreeAwardingInstitution</entry>
+    <entry key="7.PersonType">NaturalPerson</entry>
+    <entry key="7.Required">false</entry>
+    <entry key="7.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="7.XmlType.LocalPart">string</entry>
+    <entry key="7.XmlType.NamespacePrefix">xs</entry>
+    <entry key="7.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="8.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="8.FriendlyName">GraduationYear</entry>
+    <entry key="8.PersonType">NaturalPerson</entry>
+    <entry key="8.Required">false</entry>
+    <entry key="8.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="8.XmlType.LocalPart">string</entry>
+    <entry key="8.XmlType.NamespacePrefix">xs</entry>
+    <entry key="8.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="9.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="9.FriendlyName">LanguageLevel</entry>
+    <entry key="9.PersonType">NaturalPerson</entry>
+    <entry key="9.Required">false</entry>
+    <entry key="9.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="9.XmlType.LocalPart">string</entry>
+    <entry key="9.XmlType.NamespacePrefix">xs</entry>
+    <entry key="9.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+    <entry key="10.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="10.FriendlyName">Certificates</entry>
+    <entry key="10.PersonType">NaturalPerson</entry>
+    <entry key="10.Required">false</entry>
+    <entry key="10.XmlType.NamespaceUri">http://www.w3.org/2001/XMLSchema</entry>
+    <entry key="10.XmlType.LocalPart">string</entry>
+    <entry key="10.XmlType.NamespacePrefix">xs</entry>
+    <entry key="10.AttributeValueMarshaller">eu.eidas.auth.commons.attribute.impl.LiteralStringAttributeValueMarshaller</entry>
+    
+</properties>
