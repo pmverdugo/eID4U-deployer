@@ -20,15 +20,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
-  # # nodo aio
-  # config.vm.define 'eID4U-node' do |eID4U_node|
-  #   eID4U_node.vm.host_name = 'eID4U-node'
-  #   eID4U_node.vm.network 'private_network', ip: '192.168.100.3'
-  #   eID4U_node.vm.box = 'ubuntu/trusty64'
-  #   eID4U_node.vm.provider 'virtualbox' do |vb|
-  #     vb.memory = 1024
-  #   end
-  # end
+  # nodo aio
+  config.vm.define 'eID4U-node' do |eID4U_node|
+    eID4U_node.vm.host_name = 'eID4U-node'
+    eID4U_node.vm.network 'private_network', ip: '192.168.100.3'
+    eID4U_node.vm.box = 'ubuntu/trusty64'
+    eID4U_node.vm.provider 'virtualbox' do |vb|
+      vb.memory = 1024
+    end
+  end
 
   # config.vm.define 'eID4U-idp-demo' do |eID4U_idp_demo|
   #   eID4U_idp_demo.vm.host_name = 'eID4U-idp-demo'

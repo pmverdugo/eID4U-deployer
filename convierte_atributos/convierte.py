@@ -6,7 +6,7 @@ with open("./eID4U_attributes_studies.xsd", "r") as x:
 cuerpo = ""
 for i,atrib in enumerate(atribs):
     cuerpo += f"""
-    <entry key="{i+1}.NameUri">http://eidas.europa.eu/attributes/naturalperson/EidasAdditionalAttribute</entry>
+    <entry key="{i+1}.NameUri">http://eidas.europa.eu/attributes/naturalperson/Eidas{atrib}Attribute</entry>
     <entry key="{i+1}.FriendlyName">{atrib}</entry>
     <entry key="{i+1}.PersonType">NaturalPerson</entry>
     <entry key="{i+1}.Required">false</entry>

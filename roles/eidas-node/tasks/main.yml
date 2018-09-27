@@ -15,10 +15,27 @@
   when: de_fuentes
 
 - name: copia keys al appserver
-  copy: src="files/{{eidas_version}}/eID4U-node/keys/" dest="{{ config_ruta }}/keystore" owner=jboss group=jboss
+  copy: src="{{eidas_version}}/keys/" dest="{{ config_ruta }}/keystore" owner=jboss group=jboss
+
+
+- name: asegura appserver configdir
+  file: path="{{ config_ruta }}/{{app_server}}" state=directory
+
+- name: asegura configdir idp
+  file: path="{{ config_ruta }}/{{app_server}}/specific" state=directory
 
 - name: copia config al appserver
-  copy: src="files/{{eidas_version}}/eID4U-node/config/" dest="{{ config_ruta }}/jboss" owner=jboss group=jboss
+  template: src={{ item }} dest="{{ config_ruta }}/{{app_server}}/" owner=jboss group=jboss
+  with_fileglob:
+  - files/{{eidas_version}}/config/*.*
+
+- name: copia specific config al appserver
+  template: src={{ item }} dest="{{ config_ruta }}/{{app_server}}/specific/" owner=jboss group=jboss
+  with_fileglob:
+  - files/{{eidas_version}}/config/specific/*.*
 
 - name: copia war al appserver
-  copy: src="files/{{eidas_version}}/eID4U-node/EidasNode.war" dest="{{ wars_ruta }}" owner=jboss group=jboss
+  copy: src="{{eidas_version}}/EidasNode.war" dest="{{ wars_ruta }}" owner=jboss group=jboss
+
+- name: fuerza redeploy war
+  copy: content="" dest="{{ wars_ruta }}/EidasNode.war.dodeploy" owner=jboss group=jboss

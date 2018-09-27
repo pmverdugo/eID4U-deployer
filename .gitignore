@@ -2,6 +2,8 @@
 *.pem
 .vagrant
 *.log
-docker/logs/
+
 *.retry
 *.iml
+*.tar.gz
+convierte_atributos/saml-engine-additional-attributes.xml

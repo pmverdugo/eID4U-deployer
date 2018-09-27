@@ -1,8 +1,19 @@
 - name: copia keys al appserver
-  copy: src="files/{{eidas_version}}/eID4U-idp-demo/keys/" dest="{{ config_ruta }}/keystore" owner=jboss group=jboss
+  copy: src="{{eidas_version}}/keys/" dest="{{ config_ruta }}/keystore" owner=jboss group=jboss
+
+- name: asegura configdir
+  file: path="{{ config_ruta }}/{{app_server}}" state=directory
+
+- name: asegura configdir idp
+  file: path="{{ config_ruta }}/{{app_server}}/idp" state=directory
 
 - name: copia config al appserver
-  copy: src="files/{{eidas_version}}/eID4U-idp-demo/config/" dest="{{ config_ruta }}/jboss/idp" owner=jboss group=jboss
+  template: src={{ item }} dest="{{ config_ruta }}/{{app_server}}/idp/" owner=jboss group=jboss
+  with_fileglob:
+    - files/{{eidas_version}}/config/*.*
 
 - name: copia war al appserver
-  copy: src="files/{{eidas_version}}/eID4U-idp-demo/IdP.war" dest="{{ wars_ruta }}" owner=jboss group=jboss
+  copy: src="{{eidas_version}}/IdP.war" dest="{{ wars_ruta }}" owner=jboss group=jboss
+
+- name: fuerza redeploy war
+  copy: content="" dest="{{ wars_ruta }}/IdP.war.dodeploy" owner=jboss group=jboss

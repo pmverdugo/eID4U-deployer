@@ -1,15 +1,6 @@
 ---
-- hosts: eID4U-node
-  become: yes
-  vars_files:
-    - misvariables.yml
-  roles:
-    - java-jre
-    - jboss7
-    - eidas-idp
-    - eidas-sp
-    - eidas-node
-  post_tasks:
+- hosts: "{{ mi_host | default('localhost') }}"
+  tasks:
   - name: Copia additional attribs node
     copy: src=saml-engine-additional-attributes.xml backup=yes dest="{{config_ruta}}/{{app_server}}/"
   - name: Copia additional attribs node custom
@@ -21,19 +12,12 @@
   - name: Copia additional attribs sp custom
     copy: src=saml-engine-additional-attributes.xml backup=yes dest="{{config_ruta}}/{{app_server}}/sp/saml-engine-additional-attributes_SP.xml"
   - name: Fuerza redepoy IdP
-    copy: content="" dest="{{wars_ruta}}/IdP.war.dodeploy"
+    copy: content="" dest="{{deploy_ruta}}/IdP.war.dodeploy"
     when: app_server == "jboss"
   - name: Fuerza redepoy SP
-    copy: content="" dest="{{wars_ruta}}/SP.war.dodeploy"
+    copy: content="" dest="{{deploy_ruta}}/SP.war.dodeploy"
     when: app_server == "jboss"
   - name: Fuerza redepoy IdP
-    copy: content="" dest="{{wars_ruta}}/EidasNode.war.dodeploy"
+    copy: content="" dest="{{deploy_ruta}}/EidasNode.war.dodeploy"
     when: app_server == "jboss"
-  - name: rearranca el appserver
-    shell: "/etc/init.d/jbossas7 start"
-    environment:
-      AS7_OPTS: "--properties={{jboss_install_dir}}/jboss.properties"
-
-
-
 
